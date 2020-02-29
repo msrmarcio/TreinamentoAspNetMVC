@@ -48,16 +48,16 @@ namespace Editora.WebMvc.Web.Utils
 
         public void Send()
         {
-            // YAHOO: SMTP.MAIL.YAHOO.COM // porta: 465
-            // GMAIL: smtp.gmail.com  // porta: 587 ou 465
-            smtpClient.Host = "smtps.gmail.com";
-            smtpClient.EnableSsl = true; // GMail requer SSL
-            smtpClient.Port = 587;       // porta para SSL
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network; // modo de envio
             smtpClient.UseDefaultCredentials = false; // vamos utilizar credencias especificas
+            smtpClient.EnableSsl = true; // GMail requer SSL
+            // YAHOO: SMTP.MAIL.YAHOO.COM // porta: 465
+            // GMAIL: smtp.gmail.com  // porta: 587 ou 465
+            smtpClient.Host = "smtp.live.com";
+            smtpClient.Port = 587;       // porta para SSL
 
             // credenciais de login no email
-            var credenciais =  new System.Net.NetworkCredential("msrmarcios@gmail.com", "senha");
+            var credenciais =  new System.Net.NetworkCredential("msrmarcio@hotmail.com", "Whois@2013");
             smtpClient.Credentials = credenciais;
 
             // envia o email

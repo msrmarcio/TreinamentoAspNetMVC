@@ -41,7 +41,7 @@ namespace Editora.WebMvc.Web.Controllers
                     emailDestinatario, mensagem, assunto);
 
                 // TODO: comentado para testar  depois
-                // email.Send();
+                email.Send();
 
                 ViewBag.MensagemEnviada = "Mensagem enviada com sucesso"; 
                 
