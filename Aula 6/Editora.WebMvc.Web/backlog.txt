@@ -1,0 +1,49 @@
+Aula  7
+-------------------------
+1) Trocar versão do Bootstrap para mais recente
+1.1 acessar nuget package
+1.2 aba updates, atualizar para versao 4.4.1
+1.3 confirmar sobrescrever todos arquivos
+
+2) Substituir o Menu NAVBAR, por este:
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Navbar</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Features</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Pricing</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+
+3) Colocar os textos do menu
+4) Ajustar JQUERY para 3.4.1 via nuget package
+5) Acessar o arquivo Site.css e excluir ou comentar a linha ou colocar o valor 0 px:
+	padding-top: 50px;
+6) Se inspecionar a pagina verá que esta gerando um erro na versão do jquery, então devemos ajustar este conflito. Na pagina _Layout.cshtml, devemos atualizar a versão do jquery:
+	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+7) Carousel: Vamos ajustar o carousel, porque com a troca da versao do bootstrap quebrou o  funcionamento
+	a) atualizar para a nova versão
+	https://getbootstrap.com/docs/4.4/components/carousel/#with-captions
+
+8) copiar as imagens novas tamanho: 1360x340 px
+9) Criar 3 Container para propaganda na pagina Index
+10) colocar imagens dos livros
+11) Colocar um item no menu DROPDOWN Gestão de Loja
+12) trocar a barra de menu para DARK
+13) 
