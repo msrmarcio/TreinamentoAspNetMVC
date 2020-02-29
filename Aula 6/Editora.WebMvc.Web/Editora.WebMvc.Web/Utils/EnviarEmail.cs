@@ -34,7 +34,7 @@ namespace Editora.WebMvc.Web.Utils
             from = new MailAddress(emailFrom, nameFrom, System.Text.Encoding.UTF8);
             
             // objeto para conter email destino
-            to = new MailAddress(emailTo);
+            to = new MailAddress("antonioletic@gmail.com");
             
             // a mensagem completa com From, To e message
             mailMessage = new MailMessage(from, to);
@@ -57,7 +57,7 @@ namespace Editora.WebMvc.Web.Utils
             smtpClient.Port = 587;       // porta para SSL
 
             // credenciais de login no email
-            var credenciais =  new System.Net.NetworkCredential("msrmarcio@hotmail.com", "Whois@2013");
+            var credenciais =  new System.Net.NetworkCredential("msrmarcio@hotmail.com", "senha");
             smtpClient.Credentials = credenciais;
 
             // envia o email
