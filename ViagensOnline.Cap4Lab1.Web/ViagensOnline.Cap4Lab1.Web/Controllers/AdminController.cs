@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using ViagensOnline.Cap4Lab1.Web.Db;
@@ -86,7 +87,7 @@ namespace ViagensOnline.Cap4Lab1.Web.Controllers
             {
                 lista = db.Destinos.ToList();
             }
-            
+
             return View(lista);
         }
 
@@ -119,7 +120,8 @@ namespace ViagensOnline.Cap4Lab1.Web.Controllers
                         destinoOriginal.Cidade = destino.Cidade;
                         destinoOriginal.Pais = destino.Pais;
                         //Altera a imagem apenas se enviou outra
-                        if (Request.Files.Count > 0 && Request.Files[0].ContentLength > 0 ) {
+                        if (Request.Files.Count > 0 && Request.Files[0].ContentLength > 0)
+                        {
                             destinoOriginal.Foto = GravarFoto(Request);
                         }
 
@@ -133,5 +135,28 @@ namespace ViagensOnline.Cap4Lab1.Web.Controllers
             // houve algum problema
             return View(destino);
         }
+
+        public ActionResult Login()
+        {
+           
+
+            Claim[] claims = new Claim[2];
+            claims[0] = new Claim(ClaimTypes.Name, "Administrador");
+            claims[1] = new Claim(ClaimTypes.Role, "admin");
+            claims[2] = new Claim(ClaimTypes.NameIdentifier, "admin");
+            
+
+            //Nome para identificar
+            string nomeAutenticacao = "AppViagensOnLineCookie";
+            //Identidade
+            ClaimsIdentity identity =
+            new ClaimsIdentity(claims, nomeAutenticacao);
+            //Autentica
+            Request.GetOwinContext().Authentication.SignIn(identity);
+
+            return View();
+        }
     }
 }
+
+
