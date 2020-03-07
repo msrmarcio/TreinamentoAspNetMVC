@@ -10,26 +10,26 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                @Html.ActionLink("Empresa ABC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Quem Somos", "QuemSomos", "Home")</li>
-                    <li>@Html.ActionLink("Entre em Contato", "Contato", "Home")</li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li>@Html.ActionLink("Início", "Index", "Home", new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Quem Somos", "QuemSomos", "Home", new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Entre em Contato", "Contato", "Home", new { @class = "nav-link" })</li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Usuario">
+                <input class="form-control mr-sm-2" type="text" placeholder="Senha">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Autenticar</button>
+            </form>
         </div>
-    </div>
+    </nav>
+    
     <div class="container body-content">
         <!-- conteúdo da página-->
         @RenderBody()
