@@ -192,6 +192,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\TodosLivros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -209,6 +210,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POC.ADONET.BLL\POC.ADONET.BLL.csproj">
+      <Project>{f9b66be4-57af-4f48-b297-26eadb4d9b12}</Project>
+      <Name>POC.ADONET.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POC.ADONET.MODELS\POC.ADONET.MODELS.csproj">
+      <Project>{06106fb5-1d63-46ef-85ca-8b5166114eb7}</Project>
+      <Name>POC.ADONET.MODELS</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

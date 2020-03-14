@@ -35,6 +35,12 @@ namespace POC.ADONET.DAL
             }
         }
 
-        
+        public void CloseConnection()
+        {
+            if (Conn.State == ConnectionState.Open)
+            {
+                Conn.Close();
+            }
+        }
     }
 }

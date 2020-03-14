@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using POC.ADONET.MODELS;
+using POC.ADONET.BLL;
+
 namespace POC.ADONET.WEBMVC.Controllers
 {
     public class HomeController : Controller
@@ -12,6 +15,22 @@ namespace POC.ADONET.WEBMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult TodosLivros()
+        {
+            LivrosBLL livrosBll = new LivrosBLL();
+
+            var lista = livrosBll.BuscarTodosLivros();
+
+            // Vamos retornar uma lista TIPADA de livros
+            // que obtivemos atraves da camada BUSINESS LAYER
+            return View(lista);
+        }
+
+
+
+
+
 
         public ActionResult About()
         {
