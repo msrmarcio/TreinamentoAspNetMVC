@@ -11,7 +11,8 @@ namespace POC.ADONET.DAL
     public class ClienteDAL
     {
         Repository repoDB;
-        string stringConexao = "Data Source=3P47_INSTRUTOR;Initial Catalog=LIVRARIA;User ID=sa;Password=Imp@ct@";
+        //string stringConexao = "Data Source=3P47_INSTRUTOR;Initial Catalog=LIVRARIA;User ID=sa;Password=Imp@ct@";
+        string stringConexao = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LIVRARIA;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public bool Add(string nome, string email, string observacao = "")
         {
